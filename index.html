@@ -12,7 +12,52 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="controls"></div>
+        <div class="controls">
+            <h2 class="subtitle">Tools</h2>
+
+            <fieldset class="brush-color">
+                <legend>Select a brush</legend>
+                <div class="radio-btn">
+                    <input type="radio" name="brushes" id="white-brush" value="white" checked>
+                    <label for="white-brush">White</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" name="brushes" id="black-brush" value="black">
+                    <label for="black-brush">Black</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" name="brushes" id="colorful-brush">
+                    <label for="colorful-brush">Colorful</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="back-color">
+                <legend>Select background Color</legend>
+                <div class="radio-btn">
+                    <input type="radio" name="background" id="white-back" value="white">
+                    <label for="white-back">White</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" name="background" id="black-back" value="black" checked>
+                    <label for="black-back">Black</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" name="background" id="colorful-back">
+                    <label for="colorful-back">Colorful</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="size">
+                <legend>Canvas inner size</legend>
+                <div class="range-btn">
+                    <input type="range" name="inner-size" id="measure-size" min="1" max="64" value="16">
+                    <br>
+                    <label for="measure-size" class="measure">size: 16 x 16</label>
+                </div>
+            </fieldset>
+
+            <button class="btn">Setup</button>
+        </div>
         <div class="etch-container">
             <h1 class="title">ETCH A SKETCH</h1>
             <div class="canvas"></div>

@@ -24,10 +24,12 @@ measureSize.oninput = function () {
 
 // setup environment
 function setupCanvas(){
+
+    removeOldDivs(); //remove old divs from canvas
+
     let Number = measureSize.value;
     let background = getBackgroundColor();
     brush = getForgroundColor();
-
     canvas.style.backgroundColor = background;
 
     
@@ -77,4 +79,11 @@ function getRandomColor() {
     let randomColor = "#";
     randomColor += Math.floor(Math.random()* 16777215).toString(16);
     return randomColor;
+}
+
+// create function to remove old divs from canvas
+// to maintain the size of the child divs
+function removeOldDivs(){
+    let oldDivs = canvas.querySelectorAll("div");
+    oldDivs.forEach(div => div.remove());
 }

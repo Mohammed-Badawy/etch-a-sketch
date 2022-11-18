@@ -13,50 +13,63 @@
 <body>
     <div class="main-container">
         <div class="controls">
-            <h2 class="subtitle">Tools</h2>
-
-            <fieldset class="brush-color">
-                <legend>Select a brush</legend>
-                <div class="radio-btn">
-                    <input type="radio" name="brushes" id="white-brush" value="white" checked>
-                    <label for="white-brush">White</label>
-                </div>
-                <div class="radio-btn">
-                    <input type="radio" name="brushes" id="black-brush" value="black">
-                    <label for="black-brush">Black</label>
-                </div>
-                <div class="radio-btn">
-                    <input type="radio" name="brushes" id="colorful-brush">
-                    <label for="colorful-brush">Colorful</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="back-color">
-                <legend>Select background Color</legend>
-                <div class="radio-btn">
-                    <input type="radio" name="background" id="white-back" value="white">
-                    <label for="white-back">White</label>
-                </div>
-                <div class="radio-btn">
-                    <input type="radio" name="background" id="black-back" value="black" checked>
-                    <label for="black-back">Black</label>
-                </div>
-                <div class="radio-btn">
-                    <input type="radio" name="background" id="colorful-back">
-                    <label for="colorful-back">Random color</label>
-                </div>
-            </fieldset>
-
-            <fieldset class="size">
-                <legend>Canvas inner size</legend>
-                <div class="range-btn">
-                    <input type="range" name="inner-size" id="measure-size" min="1" max="64" value="16">
-                    <br>
-                    <label for="measure-size" class="measure"></label>
-                </div>
-            </fieldset>
-
-            <button class="btn">Setup</button>
+            <div class="initial-tools">
+                <h2 class="subtitle">Initial Tools</h2>
+                <fieldset class="brush-color">
+                    <legend>Select a brush</legend>
+                    <div class="radio-btn">
+                        <input type="radio" name="brushes" id="white-brush" value="white" checked>
+                        <label for="white-brush">White</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="brushes" id="black-brush" value="black">
+                        <label for="black-brush">Black</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="brushes" id="colorful-brush">
+                        <label for="colorful-brush">Colorful</label>
+                    </div>
+                </fieldset>
+                <fieldset class="back-color">
+                    <legend>Background Color</legend>
+                    <div class="radio-btn">
+                        <input type="radio" name="background" id="white-back" value="white">
+                        <label for="white-back">White</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="background" id="black-back" value="black" checked>
+                        <label for="black-back">Black</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="background" id="colorful-back">
+                        <label for="colorful-back">Random color</label>
+                    </div>
+                </fieldset>
+                <fieldset class="size">
+                    <legend>Canvas inner size</legend>
+                    <div class="range-btn">
+                        <input type="range" name="inner-size" id="measure-size" min="1" max="64" value="16">
+                        <br>
+                        <label for="measure-size" class="measure"></label>
+                    </div>
+                </fieldset>
+                <button class="btn">Setup</button>
+            </div>
+            <hr>
+            <div class="paint-tools">
+                <h2 class="subtitle">Painting Tools</h2>
+                <fieldset class="paint-erase">
+                    <legend>Check to paint</legend>
+                    <div class="radio-btn">
+                        <input type="radio" name="paint" id="painting" checked>
+                        <label for="painting">Paint</label>
+                    </div>
+                    <div class="checkbox-btn">
+                        <input type="radio" name="paint" id="eraser">
+                        <label for="eraser">Eraser</label>
+                    </div>
+                </fieldset>
+            </div>
         </div>
         <div class="etch-container">
             <h1 class="title">ETCH A SKETCH</h1>

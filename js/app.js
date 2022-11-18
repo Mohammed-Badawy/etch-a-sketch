@@ -13,7 +13,7 @@ const measureLabel = document.querySelector(".measure");
 let brush = "";
 let divNumber = 16;
 
-setupBtn.addEventListener("click", setupCanvas);
+setupBtn.addEventListener("click", initializeCanvas);
 
 measureLabel.textContent = "Size: " + divNumber +  " x " + divNumber;
 measureSize.oninput = function () {
@@ -45,6 +45,8 @@ function setupCanvas(){
 
         canvas.appendChild(rowDiv);
     }
+
+    adjustBtnText();
 }
 
 // get foreground color
@@ -86,4 +88,34 @@ function getRandomColor() {
 function removeOldDivs(){
     let oldDivs = canvas.querySelectorAll("div");
     oldDivs.forEach(div => div.remove());
+}
+
+
+// change button inner text
+function adjustBtnText(){
+    if(setupBtn.textContent === "Setup"){
+        setupBtn.textContent = "Reset";
+    }
+    else if(setupBtn.textContent === "Reset"){
+        setupBtn.textContent = "Setup";
+    }
+}
+
+
+// clear canvas
+function clearCanvas(){
+    removeOldDivs();
+    canvas.style.backgroundColor = "";
+    adjustBtnText();
+}
+
+// add initialize function
+// change the function of the main button interchangeably
+function initializeCanvas(){
+    if(setupBtn.textContent === "Setup"){
+        setupCanvas();
+    }
+    else if(setupBtn.textContent === "Reset"){
+        clearCanvas();
+    }
 }

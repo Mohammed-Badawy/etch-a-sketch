@@ -13,6 +13,7 @@ const paintBtn = document.querySelector("#painting");
 const eraseBtn = document.querySelector("#eraser");
 
 let brush = "";
+let background = "";
 let divNumber = 16;
 
 setupBtn.addEventListener("click", initializeCanvas);
@@ -29,7 +30,7 @@ function setupCanvas(){
     removeOldDivs(); //remove old divs from canvas
 
     let Number = measureSize.value;
-    let background = getBackgroundColor();
+    background = getBackgroundColor();
     canvas.style.backgroundColor = background;
 
     
@@ -135,7 +136,7 @@ function paint(){
                     smallDiv.style.backgroundColor = getForgroundColor();
                 }
                 else if(eraseBtn.checked === true){
-                    smallDiv.style.backgroundColor = getBackgroundColor();
+                    smallDiv.style.backgroundColor = background;
                 }
             })
         })

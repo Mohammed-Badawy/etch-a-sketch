@@ -9,6 +9,8 @@ const blackBackground = document.querySelector("#black-back");
 const randomBackground = document.querySelector("#colorful-back");
 const measureSize = document.querySelector("#measure-size");
 const measureLabel = document.querySelector(".measure");
+const paintBtn = document.querySelector("#painting");
+const eraseBtn = document.querySelector("#eraser");
 
 let brush = "";
 let divNumber = 16;
@@ -21,7 +23,6 @@ measureSize.oninput = function () {
     return this.value;
 }
 
-
 // setup environment
 function setupCanvas(){
 
@@ -29,7 +30,6 @@ function setupCanvas(){
 
     let Number = measureSize.value;
     let background = getBackgroundColor();
-    brush = getForgroundColor();
     canvas.style.backgroundColor = background;
 
     
@@ -47,6 +47,7 @@ function setupCanvas(){
     }
 
     adjustBtnText();
+    paint();
 }
 
 // get foreground color
@@ -105,7 +106,7 @@ function adjustBtnText(){
 // clear canvas
 function clearCanvas(){
     removeOldDivs();
-    canvas.style.backgroundColor = "";
+    canvas.style.backgroundColor = getBackgroundColor();
     adjustBtnText();
 }
 
@@ -117,5 +118,26 @@ function initializeCanvas(){
     }
     else if(setupBtn.textContent === "Reset"){
         clearCanvas();
+    }
+}
+
+
+// paint function
+function paint(){
+    let divs = canvas.querySelectorAll("div");
+
+    for(let div of divs){
+        let innerDiv = div.querySelectorAll("div");
+
+        innerDiv.forEach(smallDiv => {
+            smallDiv.addEventListener("mouseover", () => {
+                if(paintBtn.checked === true){
+                    smallDiv.style.backgroundColor = getForgroundColor();
+                }
+                else if(eraseBtn.checked === true){
+                    smallDiv.style.backgroundColor = getBackgroundColor();
+                }
+            })
+        })
     }
 }

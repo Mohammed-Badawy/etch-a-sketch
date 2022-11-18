@@ -51,10 +51,14 @@ legend {
 .title {
     padding: 1rem;
     text-align: center;
+    font-family: "Syne Mono", "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
 }
 
 .subtitle {
     text-align: center;
+    font-family: "Roboto", sans-serif;
 }
 
 .brush-color,
